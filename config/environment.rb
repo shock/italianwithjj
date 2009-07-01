@@ -73,3 +73,25 @@ Rails::Initializer.run do |config|
   # Please note that observers generated using script/generate observer need to have an _observer suffix
   # config.active_record.observers = :cacher, :garbage_collector, :forum_observer
 end
+
+$GLOBALS={}
+$GLOBALS[:site]=                    {}
+$GLOBALS[:site][:protocol]=         "http"
+$GLOBALS[:site][:host_name]=        "www"
+$GLOBALS[:site][:domain]=           "italianwithjj.com"
+$GLOBALS[:site][:site_url]=         "#{$GLOBALS[:site][:protocol]}://#{$GLOBALS[:site][:host_name]}.#{$GLOBALS[:site][:domain]}"
+$GLOBALS[:admin]=                   {}
+$GLOBALS[:admin][:email_recipients]=["Bill Doughty <bdoughty@yahoo.com>"]
+$GLOBALS[:admin][:email_sender]=    ["ItalianWithJJ.com <noreply@italianwithjj.com>"]
+
+ActionMailer::Base.delivery_method = :smtp
+ActionMailer::Base.smtp_settings = {
+  :address => "localhost",
+  :port => 25,
+  :domain => $GLOBALS[:site][:domain]
+  }
+ActionMailer::Base.perform_deliveries = true
+ActionMailer::Base.raise_delivery_errors = true
+ActionMailer::Base.default_charset = "iso-8859-1"
+
+

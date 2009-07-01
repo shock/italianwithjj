@@ -40,18 +40,17 @@ class StudentsController < ApplicationController
   # POST /students
   # POST /students.xml
   def create
+    session[:student_params] = params[:student]
     @student = Student.new(params[:student])
-
-    respond_to do |format|
-      if @student.save
-        flash[:notice] = '<div style="text-align:center"><p>Thank you for your interest!</p><p>I will be in touch very soon!</p></div>'
-        format.html { redirect_to("/") }
-        format.xml  { render :xml => @student, :status => :created, :location => @student }
+      if @student.name.blank? || (@student.email.blank? && @student.phone.blank?)
+        flash[:error] = '<div style="text-align:center"><p>Please enter your first name and an email address or a phone number, so I can contact you.  Thanks!</p></div>'
+      elsif @student.save
+        flash[:notice] = '<div style="text-align:center"><p>Thank you for your interest!</p><p>I will be in touch very soon!</p><p>-JJ</p></div>'
+        Notifier.deliver_signup_notification(@student)
       else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @student.errors, :status => :unprocessable_entity }
+        flash[:error] = '<div style="text-align:center"><p>Sorry, there were errors processing your submission.  Please try again.</p></div>'
       end
-    end
+      redirect_to("/")
   end
 
   # PUT /students/1
