@@ -17,11 +17,12 @@
 development:
   adapter: mysql
   encoding: utf8
-  database: italianwithjj_development
+  database: bdoughty_italianwithjj
   pool: 5
-  username: root
-  password: root
-  socket: /var/run/mysqld/mysqld.sock
+  username: bdoughty_jj
+  password: jj
+  socket: /var/lib/mysql/mysql.sock
+  reconnect: true
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -29,17 +30,19 @@ development:
 test:
   adapter: mysql
   encoding: utf8
-  database: italianwithjj_test
+  database: bdoughty_italianwithjj
   pool: 5
-  username: root
-  password:
-  socket: /var/run/mysqld/mysqld.sock
+  username: bdoughty_jj
+  password: jj
+  socket: /var/lib/mysql/mysql.sock
+  reconnect: true
 
 production:
   adapter: mysql
   encoding: utf8
-  database: italianwithjj_production
+  database: bdoughty_italianwithjj
   pool: 5
-  username: root
-  password: 
-  socket: /var/run/mysqld/mysqld.sock
+  username: bdoughty_jj
+  password: jj
+  socket: /var/lib/mysql/mysql.sock
+  reconnect: true
