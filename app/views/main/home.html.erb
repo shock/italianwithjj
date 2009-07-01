@@ -1,0 +1,49 @@
+<div class="fullCol">
+<p>Bongiorno!</p>
+<p>My name is Jenifer. I have 15 years of Italian teaching experience and I have worked with many different ages and levels of students.
+</p>
+<p>I tailor my classes to each student's individual needs and proficency. We focus on conversation, pronunciation, vocabulary building, reading, writing, and grammar. I teach in private settings, or with small groups.</p>
+
+<p>My teaching background includes The Dante Alleghieri Society in Cambridge, MA, the Boston School for Modern Languages, University of Texas, and numerous private students.</p>
+
+<p>I have a BA in Italian Literature and Film from the University of Massachusetts in Amherst.</p>
+
+<p>For more information, please submit your name, email and / or phone number and I will be in touch to answer any questions and to set up our first lesson.<p>
+
+<% form_for(@student) do |f| %>
+  <%= f.error_messages %>
+
+  <table>
+  <tr></td>
+    <td><%= f.label :name %></td>
+    <td><%= f.text_field :name %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :phone %></td>
+    <td><%= f.text_field :phone %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :email %></td>
+    <td><%= f.text_field :email %></td>
+  </tr>
+  </td>
+  </table>
+  <p>
+    <%= f.submit "Submit" %>
+  </p>
+<% end %>
+<hr/>
+<h3>Rates</h3>
+<p>Each lesson is 1 hour.</p>
+<p><b>$25 / hour</b> (per person) for the first 4 lessons (to be completed within one month).</p>
+<p>During these first 4 lessons, I guage the student's level, learning style and individual goals and needs.</p>
+<p>All following lessons: <b>$35 / hour</b> (per person).</p>
+<hr/>
+<h3>From my students</h3>
+
+"Quotes........"
+<hr/>
+</div>
+
+
+

@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <title>Italian With JJ!</title>
+      <%= stylesheet_link_tag 'application' %>
+      <%= stylesheet_link_tag 'jj' %>
+      <%= javascript_include_tag "jquery-1.2.6" %><script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-4626652-2");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+      <!-- <%= javascript_include_tag :defaults %>  -->
+      <!-- <%= javascript_include_tag "fckeditor/fckeditor" %> -->
+      <%= javascript_include_tag "busybox" %>
+      <!-- <%= stylesheet_link_tag 'calendar' %> -->
+      <!-- <%= stylesheet_link_tag 'default' %> -->
+      <!-- <%= javascript_include_tag 'calendar' %> -->
+      <script>
+        JQ(document).ready( function() {
+          showFlashes();
+          setTimeout( "hideFlashes()", 5000 );
+        });
+        
+        function showFlashes() {
+          JQ("#flash_notice").fadeIn(200);
+          JQ("#flash_error").fadeIn(200);
+          JQ("#flash_notice").click( function() {JQ("#flash_notice").hide();} );
+          JQ("#flash_error").click( function() {JQ("#flash_error").hide();} );
+        }
+        
+        function hideFlashes() {
+          JQ("#flash_notice").fadeOut(500);
+          JQ("#flash_error").fadeOut(500);
+        }
+      </script>
+
+  </head>
+  <body>
+    <div id="mainContainer">
+      <div id="header">
+        <% if flash[:notice] %>
+          <div id="flash_notice"><%= flash[:notice] %></div>
+        <% end -%>
+        <% if flash[:error] %>
+          <div id="flash_error"><%= flash[:error] %></div>
+        <% end -%>
+        
+        <h1>PARLIAMO ITALIANO!  (Let's speak Italian!)</h1>
+        <br/>
+        <h2>BENVENUTI AL MIO SITO! (Welcome to my site!)</h2>
+
+        
+      </div> 
+      <div class="outer">
+        <div class="inner">
+          <div class="float-wrap">
+            <div id="content"> 
+              <%= yield  %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer">
+    <div id="footer-content">
+    </div>
+  </div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-4626652-2");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+</body>
+</html>
