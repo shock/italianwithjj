@@ -81,7 +81,8 @@ $GLOBALS[:site][:host_name]=        "www"
 $GLOBALS[:site][:domain]=           "italianwithjj.com"
 $GLOBALS[:site][:site_url]=         "#{$GLOBALS[:site][:protocol]}://#{$GLOBALS[:site][:host_name]}.#{$GLOBALS[:site][:domain]}"
 $GLOBALS[:admin]=                   {}
-$GLOBALS[:admin][:email_recipients]=["Bill Doughty <bdoughty@yahoo.com>"]
+$GLOBALS[:admin][:email_recipients]=["JJ <jeniferjacksonmusic@yahoo.com>"]
+$GLOBALS[:admin][:email_bcc]       =["Bill Doughty <bdoughty@yahoo.com>"]
 $GLOBALS[:admin][:email_sender]=    ["ItalianWithJJ.com <noreply@italianwithjj.com>"]
 
 ActionMailer::Base.delivery_method = :smtp
