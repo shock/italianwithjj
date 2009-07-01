@@ -12,7 +12,7 @@ Developed by Eivind Savio
 }
 body, html {
   color: #000; 
-  font-family: Trebuchet MS;
+  font-family:  Verdana, Arial, Tahoma, sans-serif;
 
   background-color: #DDDDFF;
 /*  background-color: #eee; */
@@ -76,6 +76,7 @@ HEADER
   background-image: url(/images/title_fade.png);
   background-attachment: fixed;
   background-repeat: repeat;
+  height: 100px;
   }
 #caption {
   margin: 0 auto;
