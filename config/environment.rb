@@ -86,9 +86,12 @@ $GLOBALS[:admin][:email_sender]=    ["ItalianWithJJ.com <noreply@italianwithjj.c
 
 ActionMailer::Base.delivery_method = :smtp
 ActionMailer::Base.smtp_settings = {
-  :address => "localhost",
-  :port => 25,
-  :domain => $GLOBALS[:site][:domain]
+    :port => 26,
+    :domain => 'mail.wdoughty.net',
+    :address => 'mail.wdoughty.net',
+    :user_name => 'wdoughty+wdoughty.net',
+    :password => 'yamaha',
+    :authentication => :login
   }
 ActionMailer::Base.perform_deliveries = true
 ActionMailer::Base.raise_delivery_errors = true
