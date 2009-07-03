@@ -1,11 +1,16 @@
-Bongiorno, Jenifer!
-
+<p>
+Buongiorno, Jenifer!
+</p>
+<p>
 A prospective student has filled out the form on your website!
-
-Name: <%= @student.name %>
-Email: <%= @student.email %>
-Phone: <%= @student.phone %>
-
+</p>
+<p>
+Name: <%= link_to( @student.name, url_for(@student) ) %><br/>
+Email: <%= @student.email %><br/>
+Phone: <%= @student.phone %><br/>
+Comments: <%= @student.comments.gsub("\n", "<br/>") %>
+</p>
+<p>
 Date: <%= Date.today %>
-
+</p>
 

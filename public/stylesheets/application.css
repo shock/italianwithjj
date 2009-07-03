@@ -20,7 +20,7 @@ body, html {
 }
 body {
   background-image: url('/images/paper_background.png');
-  background-attachment: fixed;
+  background-attachment: scroll;
   background-repeat: repeat;
 }
 
@@ -37,7 +37,8 @@ img#bella {
 
 img#cin_cin {
   margin: 0px;
-  margin-left: 116px;
+  margin-left: 11
+  6px;
 } 
 
 img#buon_appetito {
