@@ -45,7 +45,7 @@ class StudentsController < ApplicationController
       if @student.name.blank? || (@student.email.blank? && @student.phone.blank?)
         flash[:error] = '<div style="text-align:center"><p>Please enter your first name and an email address or a phone number, so I can contact you.  Thanks!</p></div>'
       elsif @student.save
-        flash[:notice] = '<div style="text-align:center"><p>Thank you for your interest!</p><p>I will be in touch very soon!</p><p>-JJ</p></div>'
+        flash[:notice] = '<div style="text-align:center"><p>Thank you for contacting me!</p><p>I will be in touch soon!</p><p>-Jenifer</p></div>'
         Notifier.deliver_signup_notification(@student)
       else
         flash[:error] = '<div style="text-align:center"><p>Sorry, there were errors processing your submission.  Please try again.</p></div>'
