@@ -5,7 +5,7 @@ Buongiorno, Jenifer!
 A prospective student has filled out the form on your website!
 </p>
 <p>
-Name: <%= link_to( @student.name, url_for(@student) ) %><br/>
+Name: <%= link_to( @student.name, "http://italianwithjj.com#{url_for(@student)}" ) %><br/>
 Email: <%= @student.email %><br/>
 Phone: <%= @student.phone %><br/>
 Comments: <%= @student.comments.gsub("\n", "<br/>") %>
