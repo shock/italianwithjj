@@ -43,12 +43,12 @@ class StudentsController < ApplicationController
     session[:student_params] = params[:student]
     @student = Student.new(params[:student])
       if @student.name.blank? || (@student.email.blank? && @student.phone.blank?)
-        flash[:error] = '<div style="text-align:center"><p>Please enter your first name and an email address or a phone number, so I can contact you.  Thanks!</p></div>'
+        flash[:error] = '<div style="text-align:center;font-weight:bold;"><p>Please enter your first name and an email address or a phone number, so I can contact you.  Thanks!</p></div>'
       elsif @student.save
-        flash[:notice] = '<div style="text-align:center"><p>Thank you for contacting me!</p><p>I will be in touch soon!</p><p>-Jenifer</p></div>'
+        flash[:notice] = '<div style="text-align:center;font-weight:bold;"><p>Thank you for contacting me!</p><p>I will be in touch soon!</p><p>-Jenifer</p></div>'
         Notifier.deliver_signup_notification(@student)
       else
-        flash[:error] = '<div style="text-align:center"><p>Sorry, there were errors processing your submission.  Please try again.</p></div>'
+        flash[:error] = '<div style="text-align:center;font-weight:bold;"><p>Sorry, there were errors processing your submission.  Please try again.</p></div>'
       end
       redirect_to("/")
   end
