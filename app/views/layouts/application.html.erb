@@ -21,7 +21,8 @@ pageTracker._trackPageview();
       <%= javascript_include_tag "busybox" %>
       <!-- <%= stylesheet_link_tag 'calendar' %> -->
       <!-- <%= stylesheet_link_tag 'default' %> -->
-      <!-- <%= javascript_include_tag 'calendar' %> -->
+      <!-- <%= javascript_include_tag 'calendar' %>         <img src="/images/parliamo_contrast.png">Parliamo Italiano!</img>
+-->
       <script>
         JQ(document).ready( function() {
           showFlashes();
@@ -52,12 +53,11 @@ pageTracker._trackPageview();
           <div id="flash_error"><%= flash[:error] %></div>
         <% end -%>
         
+        
         <h1>&nbsp;</h1>
         <br/>
         <br/>
-        <h2>BENVENUTI AL MIO SITO! (Welcome to my site!)</h2>
-        <div style="position:relative; top:-122px; left: -25px;"><img src="/images/logo.png"></img></div>
-        
+        <div style="position:relative; top:-76px; left: -0px;"><img id="logo" src="/images/parliamo_contrast.png"/></div>
       </div> 
       <div class="outer">
         <div class="inner">

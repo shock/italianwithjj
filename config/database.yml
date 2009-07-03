@@ -17,11 +17,11 @@
 development:
   adapter: mysql
   encoding: utf8
-  database: bdoughty_italianwithjj
+  database: italianwithjj_development
   pool: 5
-  username: bdoughty_jj
-  password: jj
-  socket: /var/lib/mysql/mysql.sock
+  username: root
+  password: root
+  socket: /var/run/mysqld/mysqld.sock
   reconnect: true
 
 # Warning: The database defined as "test" will be erased and

@@ -1,15 +1,19 @@
 
-input {
+input, textarea {
   border: 1px #444444 solid;
   padding: 5px;
-  text-align: center;
-
+  text-align: left;
+  background:white;
+  font-size: 100%;
+  font-family:Verdana,Arial,Tahoma,sans-serif;
 }
 
 
 input:focus, input:hover {
   color: #292929;
 }
+
+textarea { text-align:left; }
 
 p {
   margin-top: 5px;
@@ -27,7 +31,6 @@ ul {
 
 td, th {
   padding: 4px;
-  border: 1px solid #777777;
   }
   
 #flash_notice {
