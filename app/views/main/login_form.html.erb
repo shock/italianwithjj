@@ -1,0 +1,10 @@
+<% form_tag :controller=>"main", :action=>"login" do %>
+Buongiorno, Jenifer!
+<br/>
+<br/>
+Please enter your password: <%= text_field :password, "", :id=>"password" %>
+<%= hidden_field_tag :ref, params[:ref] %>
+<% end %>
+<script>
+document.getElementById("password").focus();
+</script>

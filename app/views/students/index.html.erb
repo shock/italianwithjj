@@ -5,6 +5,7 @@
     <th>Name</th>
     <th>Phone</th>
     <th>Email</th>
+    <th>Created</th>
     <th>Level</th>
     <th>Hourly rate</th>
   </tr>
@@ -14,6 +15,7 @@
     <td><%=h student.name %></td>
     <td><%=h student.phone %></td>
     <td><%=h student.email %></td>
+    <td><%=h student.created_at %></td>
     <td><%=h student.level %></td>
     <td><%=h student.hourly_rate %></td>
     <td><%= link_to 'Show', student %></td>
@@ -25,4 +27,5 @@
 
 <br />
 
-<%= link_to 'New student', new_student_path %>
+<%= link_to 'New student', new_student_path %><br/>
+<%= link_to 'Logout', :controller=>"main", :action=>"logout" %>

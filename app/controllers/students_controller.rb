@@ -1,8 +1,26 @@
+require 'uri'
 class StudentsController < ApplicationController
+
+  before_filter :login_check, :except=>:create
+  
+  private
+  def login_check
+    logger.info("Checking login...")
+    if !session[:user]
+      redirect_to(:controller=>"main", :action=>"login_form", :ref=> CGI::escape(request.request_uri) )
+      return false
+    else
+      return true
+    end
+  end   
+  
+  public
   # GET /students
   # GET /students.xml
   def index
     @students = Student.find(:all)
+    
+    puts @students
 
     respond_to do |format|
       format.html # index.html.erb
@@ -47,6 +65,7 @@ class StudentsController < ApplicationController
       elsif @student.save
         flash[:notice] = '<div style="text-align:center;font-weight:bold;"><p>Thank you for contacting me!</p><p>I will be in touch soon!</p><p>-Jenifer</p></div>'
         Notifier.deliver_signup_notification(@student)
+        session[:student_params] = {}
       else
         flash[:error] = '<div style="text-align:center;font-weight:bold;"><p>Sorry, there were errors processing your submission.  Please try again.</p></div>'
       end
