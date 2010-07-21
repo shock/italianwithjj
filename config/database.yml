@@ -20,8 +20,8 @@ development:
   database: italianwithjj_development
   pool: 5
   username: root
-  password: root
-  socket: /var/run/mysqld/mysqld.sock
+  password: 
+  socket: /tmp/mysql.sock
   reconnect: true
 
 # Warning: The database defined as "test" will be erased and

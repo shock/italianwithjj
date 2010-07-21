@@ -31,8 +31,11 @@ height: 100%;
 
 img#bella {
   float: left;
-  margin: 00px;
+  margin: 0px;
   margin-left: -25px;
+  padding-top: -10px;
+  position: relative;
+  top: 10px;
 } 
 
 img#cin_cin {
@@ -78,6 +81,8 @@ h2 {
 }
 h3 {
   font-size: 1.3em;
+  margin-top: 20px;
+  padding-bottom: 0px;
 }
 h1 a, #header h2{
   color: black;
@@ -338,5 +343,9 @@ FOOTER
 #footer-content {
   margin-top: 200px;
   color: white;
+}
+
+div#section_1 {
+  margin-left: 200px;
 }
 
